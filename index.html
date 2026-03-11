@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Dada🩷</title>
+<style>
+body{
+margin:0;
+font-family:Arial;
+overflow:hidden;
+background:url("bg.jpg");
+background-size:cover;
+background-position:center;
+}
+.page{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+.active{
+display:flex;
+}
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:12px;
+background:#8F9E6E;
+color:white;
+cursor:pointer;
+margin:15px;
+box-shadow:0 6px 15px rgba(0,0,0,0.25);
+transition:0.3s;
+}
+button:hover{
+transform:scale(1.05);
+}
+.container{
+display:flex;
+align-items:center;
+gap:60px;
+}
+.photo img{
+width:300px;
+border-radius:30px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+.typing{
+font-size:60px;
+font-family:cursive;
+color:black;
+border-right:4px solid black;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 4s steps(30,end) forwards, blink .7s infinite;
+}
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+@keyframes blink{
+50%{border-color:transparent}
+}
+.sticker img{
+width:140px;
+margin-bottom:10px;
+}
+.envelopeRow{
+display:flex;
+gap:40px;
+margin-top:20px;
+}
+.envelopeBox{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+.envelopeRow img{
+width:230px;
+cursor:pointer;
+}
+.letter{
+display:none;
+background:#F6E3C5;
+color:black;
+padding:20px;
+border-radius:18px;
+max-width:260px;
+margin-top:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+font-family:cursive;
+font-size:18px;
+border:2px solid white;
+}
+.page4Layout{
+display:flex;
+align-items:center;
+gap:80px;
+}
+.giftBox{
+position:relative;
+cursor:pointer;
+}
+.giftWrap{
+width:260px;
+border-radius:20px;
+transition:.5s;
+}
+.giftWrap.open{
+transform:scale(1.1);
+}
+.ribbon{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("giftwrap.png");
+background-size:cover;
+transition:1s;
+border-radius:20px;
+}
+.ribbon.open{
+opacity:0;
+transform:scale(0);
+}
+.cake{
+width:350px;
+animation:bounce 2s infinite;
+}
+@keyframes bounce{
+0%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+100%{transform:translateY(0)}
+}
+.book{
+width:360px;
+min-height:260px;
+background:#F6E3C5;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+padding:25px;
+font-family:cursive;
+font-size:22px;
+text-align:left;
+color:black;
+border:3px solid white;
+}
+#typedLetter{
+line-height:32px;
+white-space:pre-line;
+}
+.memories{
+display:flex;
+gap:20px;
+margin:30px 0;
+}
+.memories img{
+width:170px;
+height:170px;
+object-fit:cover;
+background:white;
+padding:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+transform:rotate(-5deg);
+transition:0.4s;
+}
+.memories img:hover{
+transform:scale(1.2) rotate(0deg);
+}
+.loveText{
+font-family:cursive;
+font-size:35px;
+}
+.giftRow{
+display:flex;
+gap:50px;
+margin-top:30px;
+}
+.giftItem img{
+width:150px;
+cursor:pointer;
+}
+.surprise{
+display:none;
+margin-top:10px;
+}
+.surprise img{
+width:120px;
+}
+.page7Layout{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+}
+.finalLetter{
+width:430px;
+background:#F6E3C5;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.4);
+font-family:cursive;
+font-size:22px;
+text-align:left;
+color:black;
+border:3px solid white;
+}
+.bookmarks{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+.bookmark{
+width:220px;
+background:white;
+padding:15px;
+border-left:8px solid #8F9E6E;
+border-radius:10px;
+box-shadow:0 8px 18px rgba(0,0,0,0.3);
+font-family:cursive;
+font-size:18px;
+}
+#noBtn{
+position:relative;
+}
+</style>
+</head>
+<body>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" src="song.mp4" loop autoplay></audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+<div class="container">
+<div class="photo">
+<img src="dada.jpg">
+</div>
+<div>
+<div class="sticker">
+<img src="cat1.gif">
+</div>
+<h1 class="typing">Happy Birthday Dada 🎉</h1>
+<p style="color:black;font-size:20px">I have a surprise for you ❤️</p>
+<button onclick="nextPage(2)">Chal Pudhe</button>
+</div>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+<div class="sticker">
+<img src="cat2.gif">
+</div>
+<h1>Tap the Envelopes 💌</h1>
+<div class="envelopeRow">
+<div class="envelopeBox">
+<img src="envelope.gif" onclick="openEnvelope('msg1')">
+<div id="msg1" class="letter">
+<p>Dada ❤️ You are the best brother ever.</p>
+</div>
+</div>
+<div class="envelopeBox">
+<img src="envelope.gif" onclick="openEnvelope('msg2')">
+<div id="msg2" class="letter">
+<p>Lucky to have a brother like you 💖</p>
+</div>
+</div>
+<div class="envelopeBox">
+<img src="envelope.gif" onclick="openEnvelope('msg3')">
+<div id="msg3" class="letter">
+<p>More surprises are waiting ahead 🎉</p>
+</div>
+</div>
+</div>
+<button onclick="nextPage(3)">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+<div class="sticker">
+<img src="cat3.gif">
+</div>
+<h2>Do you like this surprise? 🥺</h2>
+<div style="display:flex;gap:30px">
+<button onclick="nextPage(4)">YES ❤️</button>
+<button id="noBtn">NO 😒</button>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+<div class="sticker">
+<img src="cat4.gif">
+</div>
+<div class="page4Layout">
+<div class="giftBox" onclick="openGift()">
+<img src="photo1.jpeg" class="giftWrap" id="giftPhoto">
+<div class="ribbon" id="ribbon"></div>
+</div>
+<img src="cake.gif" class="cake">
+<div class="book">
+<div id="typedLetter"></div>
+</div>
+</div>
+<button onclick="nextPage(5)">Next</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+<h2 style="font-family:cursive">Captured Moments</h2>
+<div class="memories">
+<img src="photo1.jpeg">
+<img src="photo2.jpeg">
+<img src="photo3.jpeg">
+<img src="photo4.jpg">
+<img src="photo5.jpeg">
+</div>
+<div class="loveText">I Love You ❤️</div>
+<button onclick="nextPage(6)">Open Your Gift 🎁</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+<h2>Choose Your Gifts 🎁</h2>
+<div class="giftRow">
+<div class="giftItem">
+<img src="giftbox.gif" onclick="openGift6('flower')">
+<div id="flower" class="surprise">
+<img src="flowers.gif">
+<p>Bloom beautifully even in tough situations & Keep spreading positivity 🌸</p>
+</div>
+</div>
+<div class="giftItem">
+<img src="giftbox.gif" onclick="openGift6('evil')">
+<div id="evil" class="surprise">
+<img src="evileye.gif">
+<p>Let this evil eye protect you from every negative vibe. 🧿✨</p>
+</div>
+</div>
+<div class="giftItem">
+<img src="giftbox.gif" onclick="openGift6('teddy')">
+<div id="teddy" class="surprise">
+<img src="teddy.gif">
+<p>Let this teddy remind you to smile every day 🧸</p>
+</div>
+</div>
+</div>
+<button onclick="nextPage(7)">Next</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+<div class="page7Layout">
+<div class="finalLetter">
+<div id="finalTyped"></div>
+</div>
+<div class="bookmarks">
+<div class="bookmark">🌟 Always believe in yourself</div>
+<div class="bookmark">💪 You are stronger than you think</div>
+<div class="bookmark">🚀 Keep chasing your dreams</div>
+</div>
+</div>
+</div>
+
+<script>
+// Function to switch pages
+function nextPage(num){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById("page"+num).classList.add("active");
+if(num==4){typeLetter();}
+if(num==7){typeFinal();}
+}
+
+// Open envelope
+function openEnvelope(id){
+document.getElementById(id).style.display="block";
+}
+
+// Open gift in page4
+function openGift(){
+document.getElementById("ribbon").classList.add("open");
+document.getElementById("giftPhoto").classList.add("open");
+}
+
+// Open gift in page6
+function openGift6(id){
+document.getElementById(id).style.display="block";
+}
+
+// NO button on page3
+document.addEventListener("DOMContentLoaded",function(){
+let noBtn=document.getElementById("noBtn");
+if(noBtn){
+noBtn.addEventListener("mouseover",function(){
+let x=Math.random()*300-150;
+let y=Math.random()*200-100;
+noBtn.style.transform="translate("+x+"px,"+y+"px)";
+});
+}
+// Play background music on first click for mobile autoplay
+document.body.addEventListener("click", function(){
+document.getElementById('bgMusic').play();
+});
+});
+
+// Typing letter in page4
+let letterText=`Dear Dada ❤️
+A brother like you is a special gift.
+You fill my life with joy and smiles.
+Thank you for all the memories we share.
+Happy Birthday to the best brother ever! 💫Happy Birthday 🎉`;
+let i=0;
+function typeLetter(){
+if(i<letterText.length){
+document.getElementById("typedLetter").innerHTML+=letterText.charAt(i);
+i++;
+setTimeout(typeLetter,40);
+}
+}
+
+// Typing final letter in page7
+let finalText=`Dear Dada ❤️
+
+Aaj ka din sirf tumhare liye hai, har pal khushi aur pyaar se bhara ho. Tumhari muskaan humesha bright rahe aur tumhare moments yaadgar bane. Cake ka taste meetha ho, wishes dil se ho, aur dosti humesha saath ho. Thodi masti, thodi hasi, aur thoda sa crazy ban ke aaj ke din ko perfect banao. Har saal tumhari zindagi aur special ho, aur har din tumhare liye naye surprises laaye. Cheers to laughter, love, aur unforgettable memories! ho gya bye bye 🥳`;
+let j=0;
+function typeFinal(){
+if(j<finalText.length){
+document.getElementById("finalTyped").innerHTML+=finalText.charAt(j);
+j++;
+setTimeout(typeFinal,40);
+}
+}
+</script>
+
+</body>
+</html>
